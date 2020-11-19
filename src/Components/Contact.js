@@ -1,17 +1,18 @@
 import React, { Component } from 'react';
 import './Contact.css';
 
-class Contact extends Component {
-    render() {
+
+function Contact(props) {
+
         return (
             <div className="Contact">
                 <div>
-                <img className='avatar' src='https://randomuser.me/api/portraits/men/19.jpg' alt='Contact Image' />
+                <img className='avatar' src={props.avatar} />
                 </div>
                 <div>
-                    <h4 className="name">Everett Kelley</h4>
-                    <div className='status-online'></div>
-                    <p className='status-text'>online</p>
+                    <h4 className="name">{props.name}</h4>
+                    <div className={props.online ? "status-online" : "status-offline"}/>
+                    <p className='status-text'>{props.online ? "Online" : "Offline"}</p>
                     
 
                 </div>
@@ -19,6 +20,6 @@ class Contact extends Component {
             
         )
     }
-}
+
 
 export default Contact;
